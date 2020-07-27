@@ -4,7 +4,7 @@ This repository contains code for an interactive information web app, created fo
 
 The site can be viewed at <https://info340c-sp20.github.io/project-RaynyT/>
 
-## Problem/Data Domain
+## Problem & Data Domain
 
 Over the course of my college career, adulting has been a struggle when it comes  to eating healthy or regularly. I found that I would buy multiple ingredients only to have them go bad. I've also, on many accounts, chosen not to eat because the food that I want to make is missing one key ingredient. I am a very spontaneous when it comes to eating thus, the question I've been pondering for a couple of years now is "How can I simplify the process of buying ingredients as well as eating them, individually or in a recipe, before they expire? How can I increase efficiency and eliminate the idea that this action is a chore?"
 
@@ -12,7 +12,7 @@ Essentially, there are many apps that are centered around recipes with tons of i
 
 Some apps that I have looked into include Side Chef: Recipes+Meal Planner and Lifesum: Diet & Macros Tracker. The scopes for these applications however resolve around health and the planning of meals along with their nutritional value. The application iPerish is similar to my idea however my scope is larger in that it incorporates recipes as well.
 
-## App Description: Efficient Household Inventory Utilization
+## App Description: Efficient Household Grocery Utilization
 
 My proposed solution is a web application designed to provide information regarding what kind of recipes can be made given a user's current stock of ingredients. To make sure food is not wasted; the application will notify the user when an item is approaching or exceeding its expiration date.
 
