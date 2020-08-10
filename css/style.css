@@ -23,17 +23,18 @@ h1 {
   font-size: 40px;
 }
 
-h2 {
+h2, p#account {
   font-size: 30px;
 }
 
-h3 {
+h3, p#recipe {
   font-size: 26px;
 }
 
 p {
   font-size: 22px;
 }
+
 
 header, h1, h2, h3, p, a {
   font-family: GroceryRounded, sans-serif;
@@ -180,7 +181,7 @@ nav a i {
   background-color: #cfeeff;
 }
   
-.flex-grocery-cards .flex-g-card > h2, .flex-aside .list > h2, .flex-aside .suggested > h3 {
+.flex-grocery-cards .flex-g-card > h2, .flex-aside .list > h2, .flex-aside .suggested > p#recipe {
   height: 40px;
   width: 100%;
   display: flex;
@@ -244,8 +245,7 @@ nav a i {
   padding-bottom: 0;
 }
 
-.flex-recipe-cards .r-card h3, p {
-  font-family: GroceryRounded, sans-serif;
+.flex-recipe-cards .r-card p#recipe, p {
   text-align: center;
   display: inline-block;
   padding-top: .5rem;
@@ -322,7 +322,7 @@ nav a i {
   color: white;
 }
 
-.settings h2 {
+.settings p#account {
   height: 73.49px;
   display: flex;
   margin: 0;
