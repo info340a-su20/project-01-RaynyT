@@ -70,6 +70,9 @@
                 <div>
                     <header>
                         <div class="flex-header">
+                            <div class="gl-logo">
+                                <img src="img/logo.png">
+                            </div>
                             <div>
                                 <h1>GrocerLogs</h1>
                             </div>
@@ -86,74 +89,83 @@
 
                     <!-- Grocery Cards -->
                     <div class="flex-grocery-cards">
-                        <div class="flex-g-card">
+                        <div class="flex-g-card" id="expired">
                             <h2>Expired</h2>
-                            <div>
-                                <img src="img/apple.jpg">
-                                <p>Apples: 3</p>
-                                <i class="fa fa-trash"></i>
-                            </div>
-                            <div>
-                                <img src="img/lettuce.jpg">
-                                <p>Lettuce: 1</p>
-                                <i class="fa fa-trash"></i>
-                            </div>
-                            <div>
-                                <img src="img/eggs.jpg">
-                                <p>Eggs: 6</p>
-                                <i class="fa fa-trash"></i>
-                            </div>
-                            <div>
-                                <img src="img/strawberry_yogurt.jpg">
-                                <p>Strawberry Yogurt: 2</p>
-                                <i class="fa fa-trash"></i>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td><img src="img/apple.jpg" id="grocery"></td>
+                                    <td><p>Apples: 3</p></td>
+                                    <td><i class="fa fa-trash fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/lettuce.jpg" id="grocery"></td>
+                                    <td><p>Lettuce: 1</p></td>
+                                    <td><i class="fa fa-trash fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/eggs.jpg" id="grocery"></td>
+                                    <td><p>Eggs: 6</p></td>
+                                    <td><i class="fa fa-trash fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/vanilla_yogurt.jpg" id="grocery"></td>
+                                    <td><p>Vanilla Yogurt: 2</p></td>
+                                    <td><i class="fa fa-trash fa-lg"></i></td>
+                                </tr>
+                            </table>
+                            <i class="fa fa-ellipsis-h fa-lg"></i>
                         </div>
-                        <div class="flex-g-card">
+                        <div class="flex-g-card" id="caution">
                             <h2>Caution</h2>
-                            <div>
-                                <img src="img/tomatoes.jpeg">
-                                <p>Tomatoes: 5 - 1 Day</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
-                            <div>
-                                <img src="img/blueberries.jpeg">
-                                <p>Blueberries: 2 - 1 Day</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
-                            <div>
-                                <img src="img/chicken_breast.jpg">
-                                <p>Chicken Breast: 1 - 2 Days</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
-                            <div>
-                                <img src="img/raspberries.jpeg">
-                                <p>Raspberries: 3 - 4 Days</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td><img src="img/tomatoes.jpeg" id="grocery"></td>
+                                    <td><p>Tomatoes: 5 - 1 Day</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/blueberries.jpeg" id="grocery"></td>
+                                    <td><p>Blueberries: 2 - 1 Day</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/chicken_breast.jpg" id="grocery"></td>
+                                    <td><p>Chicken Breast: 1 - 2 Days</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/raspberries.jpeg" id="grocery"></td>
+                                    <td><p>Raspberries: 3 - 4 Days</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                            </table>
+                            <i class="fa fa-ellipsis-h fa-lg"></i>
                         </div>
-                        <div class="flex-g-card">
+                        <div class="flex-g-card" id="fresh">
                             <h2>Fresh</h2>
-                            <div>
-                                <img src="img/blackberries.jpeg">
-                                <p>Blackberries: 2</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
-                            <div>
-                                <img src="img/cheddar_cheese.jpg">
-                                <p>Cheddar Cheese: 1</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
-                            <div>
-                                <img src="img/milk.jpeg">
-                                <p>Milk: 1</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
-                            <div>
-                                <img src="img/steak.jpeg">
-                                <p>Steak: 2</p>
-                                <i class="fa fa-check-circle-o"></i>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td><img src="img/blackberries.jpeg" id="grocery"></td>
+                                    <td><p>Blackberries: 2</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/cheddar_cheese.jpg" id="grocery"></td>
+                                    <td><p>Cheddar Cheese: 1</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/milk.jpeg" id="grocery"></td>
+                                    <td><p>Milk: 1</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="img/steak.jpeg" id="grocery"></td>
+                                    <td><p>Steak: 2</p></td>
+                                    <td><i class="fa fa-check-circle-o fa-lg"></i></td>
+                                </tr>
+                            </table>
+                            <i class="fa fa-ellipsis-h fa-lg"></i>
                         </div>
                     </div>
 
@@ -162,13 +174,13 @@
                         <!--#1-->
                         <div class="r-card">
                             <img src="img/tacos.jpg">
-                            <h4>Tacos</h4>
+                            <h3>Tacos</h3>
                             <p>7/8 Ingredients</p>
                             <div class="flex-recipe-buttons">
-                                <div>
-                                    <i class="fa fa-plus-circle"></i>
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
                                 </div>
-                                <div>
+                                <div id="peach">
                                     <img src="img/peach.svg" id="like">
                                 </div>
                             </div>
@@ -176,52 +188,100 @@
                         <!--#2-->
                         <div class="r-card">
                             <img src="img/blueberry_muffin.jpg">
-                            <h4>Blueberry Muffins</h4>
+                            <h3>Blueberry Muffins</h3>
                             <p>4/6 Ingredients</p>
-                            <i class="fa fa-plus-circle"></i>
-                            <img src="img/peach.svg" id="like">
+                            <div class="flex-recipe-buttons">
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
                         </div>
                         <!--#3-->
                         <div class="r-card" id="fav">
                             <img src="img/chicken_parmesan.jpg">
-                            <h4>Chicken Parmesan</h4>
+                            <h3>Chicken Parmesan</h3>
                             <p>5/13 Ingredients</p>
-                            <i class="fa fa-plus-circle"></i>
-                            <img src="img/peach.svg" id="like">
+                            <div class="flex-recipe-buttons">
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
                         </div>
                         <!--#4-->
                         <div class="r-card">
                             <img src="img/quesadilla.jpg">
-                            <h4>Quesadilla</h4>
+                            <h3>Quesadilla</h3>
                             <p>1/2 Ingredients</p>
-                            <i class="fa fa-plus-circle"></i>
-                            <img src="img/peach.svg" id="like">
+                            <div class="flex-recipe-buttons">
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
                         </div>
                         <!--#5-->
                         <div class="r-card" id="fav">
-                            <img src="img/taco_salad.jpg"><h4>Taco Salad</h4>
+                            <img src="img/taco_salad.jpg"><h3>Taco Salad</h3>
                             <p>7/9 Ingredients</p>
-                            <i class="fa fa-plus-circle"></i>
-                            <img src="img/peach.svg" id="like">
+                            <div class="flex-recipe-buttons">
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
                         </div>
                         <!--#6-->
                         <div class="r-card">
                             <img src="img/chicken_sandwich.jpg">
-                            <h4>Chicken Sandwich</h4>
+                            <h3>Chicken Sandwich</h3>
                             <p>2/5 Ingredients</p>
-                            <i class="fa fa-plus-circle"></i>
-                            <img src="img/peach.svg" id="like">
+                            <div class="flex-recipe-buttons">
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
                         </div>
                         <!--#7-->
                         <div class="r-card" id="fav">
                             <img src="img/omelette.jpg">
-                            <h4>Omelette</h4>
+                            <h3>Omelette</h3>
                             <p>0/6 Ingredients</p>
-                            <ul>
-                                <li><i class="fa fa-plus-circle"></i></li>
-                                <li><img src="img/peach.svg" id="like"></li>
-                            </ul>
+                            <div class="flex-recipe-buttons">
+                                <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
                         </div>
+                        <!--#8-->
+                        <div class="r-card" id="fav">
+                            <img src="img/risotto.jpg">
+                            <h3>Risotto</h3>
+                            <p>1/7 Ingredients</p>
+                            <div class="flex-recipe-buttons">
+                               <div id="add">
+                                    <i class="fa fa-plus-circle fa-lg"></i>
+                                </div>
+                                <div id="peach">
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -239,125 +299,90 @@
                         <i class="fa fa-ellipsis-v" style="font-size: 30px"></i>
                     </div>
                 </div>
+
                 <div class="list">
-                    <h3>Shopping List</h3>
-                    <div>
-                        <div>
-                            <img src="img/apple.jpg">
-                        </div>
-                        <div>
-                            <p>Apples</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/lettuce.jpg">
-                        </div>
-                        <div>
-                            <p>Lettuce</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/eggs.jpg">
-                        </div>
-                        <div>
-                            <p>Eggs</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/vanilla_yogurt.jpg">
-                        </div>
-                        <div>
-                            <p>Vanilla Yogurt</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/cheddar_cheese.jpg">
-                        </div>
-                        <div>
-                            <p>Cheddar Chees</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/milk.jpeg">
-                        </div>
-                        <div>
-                            <p>Milk</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-remove"></i>
-                        </div>
-                    </div>
+                    <h2>Shopping List</h2>
+                    <table>
+                        <tr>
+                            <td><img src="img/apple.jpg" id="grocery"></td>
+                            <td><p>Apples</p></td>
+                            <td><i class="fa fa-remove fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/lettuce.jpg" id="grocery"></td>
+                            <td><p>Lettuce</p></td>
+                            <td><i class="fa fa-remove fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/eggs.jpg" id="grocery"></td>
+                            <td><p>Eggs</p></td>
+                            <td><i class="fa fa-remove fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/vanilla_yogurt.jpg" id="grocery"></td>
+                            <td><p>Vanilla Yogurt</p></td>
+                            <td><i class="fa fa-remove fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/cheddar_cheese.jpg" id="grocery"></td>
+                            <td><p>Cheddar Chees</p></td>
+                            <td><i class="fa fa-remove fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/milk.jpeg" id="grocery"></td>
+                            <td><p>Milk</p></td>
+                            <td><i class="fa fa-remove fa-lg"></i></td>
+                        </tr>
+                    </table>
+                    <i class="fa fa-ellipsis-h fa-lg"></i>
                 </div>
+
                 <div class="suggested">
                     <h3>Suggested Groceries</h3>
-                    <div>
-                        <div>
-                            <img src="img/tomatoes.jpeg">
-                        </div>
-                        <div>
-                            <p>Tomatoes</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-cart-plus"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/blueberries.jpeg">
-                        </div>
-                        <div>
-                            <p>Blueberries</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-cart-plus"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/chicken_breast.jpg">
-                        </div>
-                        <div>
-                            <p>Chicken Breast</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-cart-plus"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <img src="img/raspberries.jpeg">
-                        </div>
-                        <div>
-                            <p>Raspberries</p>
-                        </div>
-                        <div>
-                            <i class="fa fa-cart-plus"></i>
-                        </div>
-                    </div>
+                    <table>
+                        <tr>
+                            <td><img src="img/tomatoes.jpeg" id="grocery"></td>
+                            <td><p>Tomatoes</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/blueberries.jpeg" id="grocery"></td>
+                            <td><p>Blueberries</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/chicken_breast.jpg" id="grocery"></td>
+                            <td><p>Chicken Breast</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/raspberries.jpeg" id="grocery"></td>
+                            <td><p>Raspberries</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/ground_beef.jpeg" id="grocery"></td>
+                            <td><p>Ground Beef</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/tortillas.jpg" id="grocery"></td>
+                            <td><p>Tortillas</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg"></i></td>
+                        </tr>
+                    </table>
+                    <i class="fa fa-ellipsis-h fa-lg"></i>
                 </div>
             </div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <p>Author: Rayna Tilley</p>
+        <p>Copyright &copy; 2020</p>
+        <p class="contact">Contact Rayna @</p>
+        <address>
+            <a href="mailto:raynat6@uw.edu">raynat6@uw.edu</a>
+        </address>
+    </footer>
 </body>
 </html>

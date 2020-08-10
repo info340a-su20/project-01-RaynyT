@@ -1,11 +1,13 @@
 @font-face { font-family: GroceryRounded; src: url('../fonts/GroceryRounded.ttf'); }
 
+/* Set Up */
 html {
   height: 100%;
 }
 
-header, nav {
-  font-family: GroceryRounded, sans-serif;
+main {
+  flex: 1;
+  background-color: white;
 }
 
 body {
@@ -17,8 +19,24 @@ body {
   height: inherit;
 }
 
-main {
-  flex: 1;
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 22px;
+}
+
+header, h1, h2, h3, p, a {
+  font-family: GroceryRounded, sans-serif;
 }
 
 .flex-container {
@@ -27,12 +45,14 @@ main {
   display: flex;
   flex-direction: row;
 }
+/*---*/
 
 /* Navigation Sidebar */
 nav {
   height: 100%;
   width: 95px;
   background-color: #581845;
+  overflow-y: auto;
 }
 
 nav a {
@@ -51,6 +71,7 @@ nav a:hover {
 nav a i {
   vertical-align: middle;
 }
+/*---*/
 
 /* Page Body */
 .flex-body {
@@ -59,39 +80,65 @@ nav a i {
   display: flex;
   flex-direction: column;
 }
+/*---*/
+
+/* Logo */
+.flex-header img {
+  height: 40px;
+  display: flex;
+  padding: 1rem;
+  padding-right: 0;
+  justify-content: center;
+  align-items: center;
+}
+/*---*/
 
 /* Header */
 .flex-header {
+  height: 73.49px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: #5a6a7c; /*DEBUG*/
+  background-color: #581845; /*DEBUG*/
 }
 
 .flex-header h1 {
-  height: 60px;
+  height: 73.49px;
   width: 200px;
+  color: white;
   display: flex;
   margin: 0;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #ff217f; /*DEBUG*/
 }
 
 .flex-header .searchBox {
-  height: 60px;
+  height: 73.49px;
   width: calc(100% - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: green; /*DEBUG*/
+  background-color: #581845; /*DEBUG*/
 }
 
 .flex-header .searchBox > input {
+  display: flex;
+  padding-left: .5rem;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 }
+
+.flex-header .searchBox > button {
+  background-color: transparent;
+  color: white;
+  padding-right: 1rem;
+  border: none;
+}
+/*---*/
 
 /* Page Content */
 .flex-content {
@@ -100,28 +147,40 @@ nav a i {
   display: flex;
   flex-direction: column;
 }
+/*---*/
 
 /* Grocery Cards */
 .flex-grocery-cards {
-  /* Needs max height */
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  background-color: #9c6797;
   align-items: flex-start;
+  justify-content: space-around;
 }
 
-.flex-grocery-cards .flex-g-card {
-  height: 100%;
-  width: 100%;
+.flex-grocery-cards .flex-g-card, .flex-aside .list, .flex-aside .suggested {
   display: flex;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  margin: .5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+  height: 95%;
 }
 
-.flex-grocery-cards .flex-g-card > h2 {
+.flex-grocery-cards .flex-g-card {
+  width: 24rem;
+}
+
+.flex-aside .list, .flex-aside .suggested {
+  width: 90%;
+  align-items: center;
+  background-color: #cfeeff;
+}
+  
+.flex-grocery-cards .flex-g-card > h2, .flex-aside .list > h2, .flex-aside .suggested > h3 {
   height: 40px;
   width: 100%;
   display: flex;
@@ -129,31 +188,42 @@ nav a i {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: blue;
+  padding-top: .5rem; 
 }
 
-.flex-grocery-cards .flex-g-card > div {
+#expired {
+  background-color:  #ffcfcf;
+}
+
+#caution {
+  background-color:  #fff6cf;
+}
+
+#fresh {
+  background-color:  #cfffd0;
+}
+
+#expired > div, #caution > div, #fresh > div, .list > div, .suggested > div {
+  display: inline-flex;
+  flex-direction: row;
   padding: 0px 5px;
+  justify-content: space-between;
 }
 
 .flex-grocery-cards .flex-g-card > div > * {
   display: inline-block;
 }
-
-.flex-grocery-cards .flex-g-card img {
-  height: 24px;
-  border-radius: 10px
-}
+/*---*/
 
 /* Recipe Cards */
 .flex-recipe-cards {
-  /* Needs max height */
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-  background-color: orange;
+  background-color: white;
+  justify-content: space-around;
 }
 
 .flex-recipe-cards .r-card {
@@ -163,7 +233,7 @@ nav a i {
   margin: .5rem;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-  width: 8rem;
+  width: 12rem;
   height: 250px;
 }
 
@@ -171,27 +241,48 @@ nav a i {
   width: 100%;
   border-top-right-radius: 10%;
   border-top-left-radius: 10%;
+  padding-bottom: 0;
 }
 
-.flex-recipe-cards .r-card h4, p {
+.flex-recipe-cards .r-card h3, p {
   font-family: GroceryRounded, sans-serif;
   text-align: center;
+  display: inline-block;
+  padding-top: .5rem;
+  margin: 0;
+}
+
+.flex-recipe-cards .r-card p {
+  padding-bottom: .5rem;
 }
 
 .flex-recipe-cards .r-card .flex-recipe-buttons {
   display: flex;
   flex-direction: row;
+
 }
 
 .flex-recipe-cards .r-card .flex-recipe-buttons > div {
-  background-color: magenta;
   height: 100%;
   width: 50%;
 }
 
 #like {
   height: 2rem;
-  width: 100%;
+  filter: grayscale(100%);
+}
+
+#add {
+  padding-top: 7px;
+  padding-left: 45px;
+}
+
+#peach {
+  padding-right: 5px;
+}
+
+#fav > div > div#peach > img {
+  filter: none;
 }
 
 /* Page Aside */
@@ -200,11 +291,11 @@ nav a i {
   width: 20%;
   display: flex;
   flex-direction: column;
-  background-color: cyan;
+  background-color: white;
 }
 
 /* Settings */
-.settings, .list > div, .suggested > div {
+.settings, .list > div, .suggested > div, .flex-g-card > div {
   display: inline-flex;
   flex-direction: row;
   line-height: 45px;
@@ -212,13 +303,33 @@ nav a i {
   font-family: GroceryRounded, sans-serif;
 }
 
-.settings div, .list div > div, .suggested div > div {
+.settings {
+  justify-content: center;
+  background-color: #581845;
+  height: 73.49px;
+}
+
+.settings div, .list div > div, .suggested div > div, .flex-g-card > div * {
   padding: .5rem;
   display: flex;
 }
 
+.flex-g-card > div > div {
+  justify-content: space-between;
+}
+
+.settings i {
+  color: white;
+}
+
 .settings h2 {
+  height: 73.49px;
+  display: flex;
   margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }
 
 .settings img {
@@ -226,13 +337,50 @@ nav a i {
   width: 40px;
   border-radius: 50%;
   overflow: hidden;
+  border: 1px solid white;
 }
 /*---*/
 
-/* Shopping List & Suggested */
-.list img, .suggested img {
+/* Grocery Images */
+#grocery {
   height: 30px;
   width: 30px;
   border-radius: 50%;
   overflow: hidden;
 }
+
+table {
+  width: 100%;
+  padding-bottom: 1rem;
+  padding-left: .3rem;
+  padding-right: .3rem;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-family: GroceryRounded, sans-serif;
+  margin-top: auto;
+  margin-bottom: .5rem;
+}
+
+footer * {
+  display: inline;
+  padding: .5rem;
+}
+
+.contact {
+  padding-right: 0;
+}
+
+footer address {
+  padding-left: 0;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 22px;
+}
+/*---*/
