@@ -8,11 +8,6 @@ header, nav {
 	font-family: GroceryRounded, sans-serif;
 }
 
-header {
-	padding-left: 90px;
-	padding-top:;
-}
-
 body {
   font-family: sans-serif;
   margin: 0;
@@ -29,46 +24,23 @@ main {
 main > div {
 	display: flex;
 	flex-wrap: wrap;
+  flex-direction: row;
 	height: 100%;
 }
 
-/*Navigation Bar*/
+/* Navigation Sidebar */
 .sidenav {
   height: 100%;
-  width: 85px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  width: 95px; /* Minimum size */
   background-color: #581845;
-  padding-top: .0;
-  list-style: none;
-}
-
-.sidenav > div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 .sidenav a {
+  display: block;
   color: white;
-  transition: none;
-  position: static;
-  transform: none;
-  opacity: 1;
   text-align: center;
   text-decoration: none;
-  display: block;
   line-height: 1.5;
-  border-radius: 0;
-  margin: 0 0 0;
-  padding: 0;
-  background: transparent;
-  white-space: normal;
-  word-wrap: break-word;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .sidenav a:hover {
@@ -77,19 +49,47 @@ main > div {
 }
 
 .sidenav i {
-  transform: translate3d(0, 0, 0);
-  position: relative;
-  z-index: 1;
-  width: 48px;
-  margin: 0 auto;
-  display: inline-block;
   vertical-align: middle;
 }
 
-.sidenav li {
-	padding: 0 0;
+/* Header and Search Bar */
+header {
+  height: 60px;
+  width: calc(100% - 95px);
+  display: flex;
+  align-items: center;
+  background-color: #9c9797
 }
 
+header > h1 {
+  height: inherit;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  text-align: center;
+  padding: 0px 10px;
+  background-color: #9c8797;
+}
+
+header > div {
+  height: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  background-color: #9c7797;
+}
+
+header input {
+  width: 100%;
+}
+
+/* Grocery Cards */
+.grocery-cards {
+  display: flex;
+}
+
+/* Grocery Cards */
 .e-card img {
 	height: 24px;
 	border-radius: 10px
