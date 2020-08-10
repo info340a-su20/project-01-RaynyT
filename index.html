@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>GrocerLogs</title>
+    <!--links for icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--other links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="columns">
+            <nav class="sidenav">
+                <li class="dashboard">
+                    <a href="#">
+                        <div>
+                            <svg x="0" y="0" viewbox="0 0 280 25" enable-background="new 0 0 280 25" xml:space="preserve">
+                                <i class="material-icons" aria-label="dashboard">dashboard</i>
+                            </svg>
+                        </div>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li class="inventory">
+                    <a href="#">
+                        <div>
+                            <svg x="0" y="0" viewbox="0 0 300 20">
+                                <i class='fas fa-warehouse' aria-label="inventory"></i>
+                            </svg>
+                        </div>
+                        <div>Inventory</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>
+                            <svg x="0" y="0" viewbox="0 0 300 20">
+                                <i class='fas fa-database' aria-label="database"></i>
+                            </svg>
+                        </div>
+                        <div>Database</div>
+                    </a>
+                </li>
+                <li class="recipes">
+                    <a href="#">
+                        <div>
+                            <svg x="0" y="0" viewbox="0 0 300 20">
+                                <i class='fas fa-carrot' aria-label="food"></i>
+                            </svg>
+                        </div>
+                        <div>Recipes</div>
+                    </a>
+                </li>
+                <li class="shoppinglist">
+                    <a href="#">
+                        <div>
+                            <svg x="0" y="0" viewbox="0 0 300 20">
+                                <i class="fa fa-list-ol" aria-label="shopping-list"></i>
+                            </svg>
+                        </div>
+                        <div>Shopping List</div>
+                </li>
+                <li class="faq">
+                    <a href="#">
+                        <div>
+                            <svg x="0" y="0" viewbox="0 0 300 20">
+                                <i class="fa fa-quora"></i>
+                            </svg>
+                        </div>
+                        <div>FAQ</div>
+                    </a>
+                </li>
+            </nav>
+            <section>
+                <div class="middle">
+                    <div class="rows">
+                        <div class="row">
+                            <header>
+                                <div class="top">
+                                    <h1>GrocerLogs</h1>
+                                    <div class="searchBox" role="search">
+                                        <input type="text" placeholder="Search...">
+                                        <button><i aria-label="Search" class="fas fa-search fa-flip-horizontal"></i></button>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="row">
+                            <div class="e-columns"
+                                <div class="expire">
+                                    <div class="e-card">
+                                        <h3>Expired</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="img/apple.jpg">
+                                                <p>Apples: 3<p>
+                                                <i class="fa fa-trash"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/lettuce.jpg">
+                                                <p>Lettuce: 1<p>
+                                                <i class="fa fa-trash"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/eggs.jpg">
+                                                <p>Eggs: 6<p>
+                                                <i class="fa fa-trash"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/strawberry_yogurt.jpg">
+                                                <p>Strawberry Yogurt: 2<p>
+                                                <i class="fa fa-trash"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <div class="caution">
+                                    <div class="e-card">
+                                        <h3>Caution</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="img/tomatoes.jpeg">
+                                                <p>Tomatoes: 5 - 1 Day<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/blueberries.jpeg">
+                                                <p>Blueberries: 2 - 1 Day<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/chicken_breast.jpg">
+                                                <p>Chicken Breast: 1 - 2 Days<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/raspberries.jpeg">
+                                                <p>Raspberries: 3 - 4 Days<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="fresh">
+                                    <div class="e-card">
+                                        <h3>Fresh</h3>
+                                        <ul>
+                                            <li>
+                                                <img src="img/blackberries.jpeg">
+                                                <p>Blackberries: 2<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/cheddar_cheese.jpg">
+                                                <p>Cheddar Cheese: 1<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/milk.jpeg">
+                                                <p>Milk: 1<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                            <li>
+                                                <img src="img/steak.jpeg">
+                                                <p>Steak: 2<p>
+                                                <i class="fa fa-check-circle-o"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="recipe">
+                                <!--#1-->
+                                <div class="r-card">
+                                    <h4>Tacos</h4>
+                                    <img src="img/tacos.jpg">
+                                    <p>7/8 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#2-->
+                                <div class="r-card">
+                                    <h4>Blueberry Muffins</h4>
+                                    <img src="img/blueberry_muffin.jpg">
+                                    <p>4/6 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#3-->
+                                <div class="r-card" id="fav">
+                                    <h4>Chicken Parmesan</h4>
+                                    <img src="img/chicken_parmesan.jpg">
+                                    <p>5/13 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#4-->
+                                <div class="r-card">
+                                    <h4>Quesadilla</h4>
+                                    <img src="img/quesadilla.jpg">
+                                    <p>1/2 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#5-->
+                                <div class="r-card" id="fav">
+                                    <h4>Taco Salad</h4>
+                                    <img src="img/taco_salad.jpg">
+                                    <p>7/9 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#6-->
+                                <div class="r-card">
+                                    <h4>Chicken Sandwich</h4>
+                                    <img src="img/chicken_sandwich.jpg">
+                                    <p>2/5 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#7-->
+                                <div class="r-card" id="fav">
+                                    <h4>Omelette</h4>
+                                    <img src="img/omelette.jpg">
+                                    <p>0/6 Ingredients<p>
+                                    <i class="fa fa-plus-circle"></i>
+                                    <img src="img/peach.svg" id="like">
+                                </div>
+                                <!--#8-->
+                                <div class="insert-card">
+                                    <form>
+                                        <h4>New Grocery</h4>
+                                        <label for="grocname">Item Name:</label><br>
+                                        <input type="text" id="grocname">
+                                        <label for="type">Item Type:</label>
+                                        <select id="type" size='7' multiple>
+                                            <option value="vegetable">Vegetable</option>
+                                            <option value="fruit">Fruit</option>
+                                            <option value="grain">Grain/Beans/Nuts</option>
+                                            <option value="meat">Meat/Poultry</option>
+                                            <option value="seafood">Fish/Seafood</option>
+                                            <option value="dairy">Dairy</option>
+                                            <option value="fats">Fats</option>
+                                        </select>
+                                        <label for="store">Store:</label>
+                                        <select id="store">
+                                            <option value="albertsons">Albertsons LLC</option>
+                                            <option value="aholddelhaize">Ahold Delhaize</option>
+                                            <option value="kroger">Kroger</option>
+                                            <option value="target">Target</option>
+                                            <option value="walmart">Walmart</option>
+                                        </select>
+                                        <label for="expiration">Expiration (Days):</label>
+                                        <input type="number" max="1825" min="1" step="1" value="7">
+                                        <label for="item-pic">Picture:</label>
+                                        <input type="file" accept="image/*">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="list">
+                    <div class="settings">
+
+                    </div>
+
+                    <div class="list">
+
+                    </div>
+
+                    <div class="suggested">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
