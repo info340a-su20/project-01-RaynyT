@@ -1,11 +1,11 @@
 @font-face { font-family: GroceryRounded; src: url('../fonts/GroceryRounded.ttf'); }
 
 html {
-	height: 100%;
+  height: 100%;
 }
 
 header, nav {
-	font-family: GroceryRounded, sans-serif;
+  font-family: GroceryRounded, sans-serif;
 }
 
 body {
@@ -18,24 +18,24 @@ body {
 }
 
 main {
-	flex: 1;
+  flex: 1;
 }
 
-main > div {
-	display: flex;
-	flex-wrap: wrap;
+.flex-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
   flex-direction: row;
-	height: 100%;
 }
 
 /* Navigation Sidebar */
-.sidenav {
+nav {
   height: 100%;
-  width: 95px; /* Minimum size */
+  width: 95px;
   background-color: #581845;
 }
 
-.sidenav a {
+nav a {
   display: block;
   color: white;
   text-align: center;
@@ -43,64 +43,196 @@ main > div {
   line-height: 1.5;
 }
 
-.sidenav a:hover {
+nav a:hover {
   color: #3f900c;
   border-right: .3rem solid #3f900c;
 }
 
-.sidenav i {
+nav a i {
   vertical-align: middle;
 }
 
-/* Header and Search Bar */
-header {
-  height: 60px;
-  width: calc(100% - 95px);
+/* Page Body */
+.flex-body {
+  height: 100%;
+  width: calc(100% - 95px - 20%);
   display: flex;
-  align-items: center;
-  background-color: #9c9797
+  flex-direction: column;
 }
 
-header > h1 {
-  height: inherit;
+/* Header */
+.flex-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #5a6a7c; /*DEBUG*/
+}
+
+.flex-header h1 {
+  height: 60px;
+  width: 200px;
   display: flex;
   margin: 0;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0px 10px;
-  background-color: #9c8797;
+  background-color: #ff217f; /*DEBUG*/
 }
 
-header > div {
-  height: inherit;
+.flex-header .searchBox {
+  height: 60px;
+  width: calc(100% - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: green; /*DEBUG*/
+}
+
+.flex-header .searchBox > input {
+  width: 100%;
+}
+
+/* Page Content */
+.flex-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grocery Cards */
+.flex-grocery-cards {
+  /* Needs max height */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #9c6797;
+  align-items: flex-start;
+}
+
+.flex-grocery-cards .flex-g-card {
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
-  padding-left: 10px;
-  background-color: #9c7797;
+  text-align: center;
+  flex-direction: column;
 }
 
-header input {
+.flex-grocery-cards .flex-g-card > h2 {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: blue;
+}
+
+.flex-grocery-cards .flex-g-card > div {
+  padding: 0px 5px;
+}
+
+.flex-grocery-cards .flex-g-card > div > * {
+  display: inline-block;
+}
+
+.flex-grocery-cards .flex-g-card img {
+  height: 24px;
+  border-radius: 10px
+}
+
+/* Recipe Cards */
+.flex-recipe-cards {
+  /* Needs max height */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  background-color: orange;
+}
+
+.flex-recipe-cards .r-card {
+  display: flex;
+  flex-direction: column;
+  background color: white;
+  margin: .5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+  width: 8rem;
+  height: 250px;
+}
+
+.flex-recipe-cards .r-card > img {
+  width: 100%;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 10%;
+}
+
+.flex-recipe-cards .r-card h4, p {
+  font-family: GroceryRounded, sans-serif;
+  text-align: center;
+}
+
+.flex-recipe-cards .r-card .flex-recipe-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-recipe-cards .r-card .flex-recipe-buttons > div {
+  background-color: magenta;
+  height: 100%;
+  width: 50%;
+}
+
+#like {
+  height: 2rem;
   width: 100%;
 }
 
-/* Grocery Cards */
-.grocery-cards {
+/* Page Aside */
+.flex-aside {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  background-color: cyan;
+}
+
+/*Settings*/
+.settings, .list > div, .suggested > div {
+  display: inline-flex;
+  flex-direction: row;
+  line-height: 45px;
+  align-items: center;
+  font-family: GroceryRounded, sans-serif;
+}
+
+.settings div, .list div > div, .suggested div > div {
+  padding: .5rem;
   display: flex;
 }
 
-/* Grocery Cards */
-.e-card img {
-	height: 24px;
-	border-radius: 10px
+.settings h2 {
+  margin: 0;
 }
 
-.e-card {
-	display: inline-block;
-	padding-left: 100px;
-	border-color: #3f900c;
+.settings img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
 }
+/*---*/
 
-.e-card li {
-	list-style: none;
+/*Shopping List & Suggested*/
+.list img, .suggested img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
 }
