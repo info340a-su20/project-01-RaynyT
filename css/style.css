@@ -203,7 +203,7 @@ nav a i {
   background-color: cyan;
 }
 
-/*Settings*/
+/* Settings */
 .settings, .list > div, .suggested > div {
   display: inline-flex;
   flex-direction: row;
