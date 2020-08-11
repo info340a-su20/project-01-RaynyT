@@ -52,6 +52,7 @@ nav {
   width: 95px;
   background-color: #581845;
   overflow-y: auto;
+  border-bottom-right-radius: 10px;
 }
 
 nav a {
