@@ -94,8 +94,8 @@
 				<div class="flex-content">
 					<div class="add-rows">
 						<div class="add-recipe">
-							<div>
-								<img src="img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta">
+							<div id='for-header'>
+								<img id='form-rec-pic' src="img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta">
 								<h2>Chicken Parmesan</h2>
 								<i class='fas fa-user-alt'></i>
 								<p>1</p>
@@ -152,7 +152,7 @@
 								</table>
 							</div>
 							<div>
-								<div id="peach">
+								<div id="peach" id="favorite">
 									<img src="img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
 								</div>
 								<div id="add-all-button">
@@ -160,40 +160,80 @@
 								</div>
 							</div>
 						</div>
-						<div class="add-other-groc">
-							<h3>Other Ingredients</h3>
-							<!--Extra Ingredient-->
-							<div>
-								<div>
-									<form>
-										<label for="measurement">Measurement:</label>
-										<select id="add-ingredient">
-											<option value="choose" disabled selected>Choose</option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-											<option value=""></option>
-										</select><br>
-									</form>
+						<div>
+							<form>
+								<div id="divGrocRight">
+									<h2>New Grocery</h2>
+									<label for="grocname">Name:</label>
+									<input type="text" id="grocname"><br>
+									<label for="type">Food Group/Diet:</label><br>
+										<input type="checkbox" id="type" name="type" value="vegetable">
+										<label for="type">Vegetable</label><br>
+										<input type="checkbox" id="type" name="type" value="fruit">
+										<label for="type">Fruit</label><br>
+										<input type="checkbox" id="type" name="type" value="fish-seafood">
+										<label for="type">Fish/Seafood</label><br>
+										<input type="checkbox" id="type" name="type" value="protein">
+										<label for="type">Protein</label><br>
+										<input type="checkbox" id="type" name="type" value="dairy">
+										<label for="type">Dairy</label><br>
+										<input type="checkbox" id="type" name="type" value="fats">
+										<label for="type">Fats</label><br>
+										<input type="checkbox" id="type" name="type" value="sweets">
+										<label for="type">Sweets</label><br>
+										<input type="checkbox" id="type" name="type" value="snack">
+										<label for="type">Snack</label><br>
+										<input type="checkbox" id="type" name="type" value="condiment">
+										<label for="type">Condiment</label><br>
+										<input type="checkbox" id="type" name="type" value="sauce">
+										<label for="type">Sauce</label><br>
+										<input type="checkbox" id="type" name="type" value="nd-drink">
+										<label for="type">Non-Dairy Drink</label><br>
+										<input type="checkbox" id="type" name="type" value="grass-fed">
+										<label for="type">Grass-fed</label><br>
+										<input type="checkbox" id="type" name="type" value="free-range">
+										<label for="type">Free-range</label><br>
+										<input type="checkbox" id="type" name="type" value="gluten-free">
+										<label for="type">Gluten-free</label><br>
+										<input type="checkbox" id="type" name="type" value="all-natural">
+										<label for="type">All Natural</label><br>
+										<input type="checkbox" id="type" name="type" value="pre-made">
+										<label for="type">Pre-Made Meal</label><br>
+									</select>
 								</div>
-								<div>
-									<i class="fa fa-plus" aria-label="plus icon"></i>
-								</div>
-							</div>
-							<!--Submit Button-->
-							<div>
+								<div id="divGrocLeft">
+									<label for="quantity">Quantity:</label>
+									<input type="number" max="1825" min="0.05" step="0.05" value="1"><br>
+									<label for="measurement">Measurement:</label>
+									<select id="store">
+										<option value="choose" disabled selected>Choose</option>
+										<option value="tablespoon">Tablespoon</option>
+										<option value="teaspoon">Teaspoon</option>
+										<option value="cup">Cup</option>
+										<option value="pint">Pint</option>
+										<option value="quart">Quart</option>
+										<option value="gallon">Gallon</option>
+										<option value="ounce">Ounce</option>
+										<option value="pound">Pound</option>
+										<option value="pint">Pint</option>
+										<option value="dash">Dash/Pinch</option>
+										<option value="pint">Pint</option>
+									</select><br>
+									<label for="store">Store:</label>
+									<select id="store">
+										<option value="choose" disabled selected>Choose</option>
+										<option value="albertsons">Albertsons LLC</option>
+										<option value="aholddelhaize">Ahold Delhaize</option>
+										<option value="kroger">Kroger</option>
+										<option value="target">Target</option>
+										<option value="walmart">Walmart</option>
+										<option value="other">Other</option>
+									</select><br>
+									<label for="expiration">Expiration (Days):</label>
+									<input type="number" max="1825" min="1" step="1" value="7"><br>
+									<label for="item-pic">Item Picture:</label>
+									<input type="file" accept="image/*"><br>
+								</form>
 								<button type="button">Submit</button>
 							</div>
 						</div>
@@ -203,75 +243,93 @@
 
 			<!-- Page Aside -->
 			<div class="flex-aside">
-				<div class="settings">
-					<div>
-						<img src="img/pirvu_fam.jpg" alt="image of the couple for who this account belongs to">
-					</div>
-					<div>
-						<p id="account">Pirvu Family</p>
-					</div>
-					<div>
-						<i class="fa fa-ellipsis-v" aria-label="ellipse/more icon" style="font-size: 30px"></i>
-					</div>
-				</div>
 				<div>
-					<form>
-						<h2>New Grocery</h2>
-						<label for="grocname">Name:</label>
-						<input type="text" id="grocname"><br>
-						<label for="type">Food Group/Diet:</label><br>
-							<input type="checkbox" id="type" name="type" value="vegetable">
-							<label for="type">Vegetable</label><br>
-							<input type="checkbox" id="type" name="type" value="fruit">
-							<label for="type">Fruit</label><br>
-							<input type="checkbox" id="type" name="type" value="meat">
-							<label for="type">Fish/Seafood</label><br>
-							<input type="checkbox" id="type" name="type" value="dairy">
-							<label for="type">Fats</label><br>
-							<input type="checkbox" id="type" name="type" value="organic">
-							<label for="type">Grass-fed</label><br>
-							<input type="checkbox" id="type" name="type" value="cage-free">
-							<label for="type">Free-range</label><br>
-							<input type="checkbox" id="type" name="type" value="non=gmo">
-							<label for="type">Gluten-free</label><br>
-							<input type="checkbox" id="type" name="type" value="all-natural">
-							<label for="type">All Natural</label><br>
-						</select>
-						<label for="quantity">Quantity:</label>
-						<input type="number" max="1825" min="0.05" step="0.05" value="1"><br>
-						<label for="measurement">Measurement:</label>
-						<select id="store">
-							<option value="choose" disabled selected>Choose</option>
-							<option value="tablespoon">Tablespoon</option>
-							<option value="teaspoon">Teaspoon</option>
-							<option value="cup">Cup</option>
-							<option value="pint">Pint</option>
-							<option value="quart">Quart</option>
-							<option value="gallon">Gallon</option>
-							<option value="ounce">Ounce</option>
-							<option value="pound">Pound</option>
-							<option value="pint">Pint</option>
-							<option value="dash">Dash/Pinch</option>
-							<option value="pint">Pint</option>
-						</select><br>
-						<label for="store">Store:</label>
-						<select id="store">
-							<option value="choose" disabled selected>Choose</option>
-							<option value="albertsons">Albertsons LLC</option>
-							<option value="aholddelhaize">Ahold Delhaize</option>
-							<option value="kroger">Kroger</option>
-							<option value="target">Target</option>
-							<option value="walmart">Walmart</option>
-							<option value="other">Other</option>
-						</select><br>
-						<label for="expiration">Expiration (Days):</label>
-						<input type="number" max="1825" min="1" step="1" value="7"><br>
-						<label for="item-pic">Item Picture:</label>
-						<input type="file" accept="image/*"><br>
-					</form>
-					<button type="button">Submit</button>
-				</div>
-			</div>
+					<div class="settings">
+                    <div>
+                        <img src="img/pirvu_fam.jpg" alt="image of the couple for who this account belongs to">
+                    </div>
+                    <div>
+                        <p id="account">Pirvu Family</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-ellipsis-v" aria-label="ellipse/more icon" style="font-size: 30px"></i>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <h2>Shopping List</h2>
+                    <table>
+                        <tr>
+                            <td><img src="img/apple.jpg" id="grocery" alt="apple"></td>
+                            <td><p>Apples</p></td>
+                            <td><i class="fa fa-remove fa-lg" aria-label="remove icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/lettuce.jpg" id="grocery" alt="head of lettuce"></td>
+                            <td><p>Lettuce</p></td>
+                            <td><i class="fa fa-remove fa-lg" aria-label="remove icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/eggs.jpg" id="grocery" alt="carton of eggs"></td>
+                            <td><p>Eggs</p></td>
+                            <td><i class="fa fa-remove fa-lg" aria-label="remove icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/vanilla_yogurt.jpg" id="grocery" alt="bowl of vanilla yogurt with strawberries"></td>
+                            <td><p>Vanilla Yogurt</p></td>
+                            <td><i class="fa fa-remove fa-lg" aria-label="remove icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/cheddar_cheese.jpg" id="grocery" alt="cheddar cheese blocks"></td>
+                            <td><p>Cheddar Chees</p></td>
+                            <td><i class="fa fa-remove fa-lg" aria-label="remove icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/milk.jpeg" id="grocery" alt="pitcher of milk with glasses"></td>
+                            <td><p>Milk</p></td>
+                            <td><i class="fa fa-remove fa-lg" aria-label="remove icon"></i></td>
+                        </tr>
+                    </table>
+                    <i class="fa fa-ellipsis-h fa-lg" aria-label="ellipse/more icon"></i>
+                </div>
+
+                <div class="suggested">
+                    <h3>Suggested Groceries</h3>
+                    <table>
+                        <tr>
+                            <td><img src="img/tomatoes.jpeg" id="grocery" alt="tomatoes on a vine"></td>
+                            <td><p>Tomatoes</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/blueberries.jpeg" id="grocery" alt="carton of blueberries"></td>
+                            <td><p>Blueberries</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/chicken_breast.jpg" id="grocery" alt="raw chicken breast"></td>
+                            <td><p>Chicken Breast</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/raspberries.jpeg" id="grocery" alt="carton of raspberries"></td>
+                            <td><p>Raspberries</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/ground_beef.jpeg" id="grocery" alt="ground beef in a bowl"></td>
+                            <td><p>Ground Beef</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/tortillas.jpg" id="grocery" alt="stack of tortillas"></td>
+                            <td><p>Tortillas</p></td>
+                            <td><i class="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+                        </tr>
+                    </table>
+                    <i class="fa fa-ellipsis-h fa-lg" aria-label="ellipse/more icon"></i>
+                </div>
+            </div>
 		</div>
 	</main>
 	<footer>

@@ -275,7 +275,7 @@ nav a i {
   padding-right: 5px;
 }
 
-#fav > div > div#peach > img {
+#fav > div > div#peach > img, #favorite > img {
   filter: none;
 }
 
@@ -334,6 +334,20 @@ nav a i {
   border: 1px solid white;
 }
 /*---*/
+
+#form-header {
+  width: 100%;
+}
+
+/* Form Image */
+#form-rec-pic {
+  height: 30%;
+  width: 20%;
+  border-bottom-right-radius:  50%;
+  overflow: hidden;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
 
 /* Grocery Images */
 #grocery {
