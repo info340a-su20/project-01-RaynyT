@@ -74,7 +74,7 @@ var App = function (_React$Component) {
 						React.createElement(
 							"div",
 							{ className: "r-card", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/tacos.jpg", alt: "a couple of tacos loaded with veggies, cheese and meat" }),
+							React.createElement("img", { src: "./img/tacos.jpg", alt: "a couple of tacos loaded with veggies, cheese and meat" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -96,14 +96,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/blueberry_muffin.jpg", alt: "blueberry muffin" }),
+							React.createElement("img", { src: "./img/blueberry_muffin.jpg", alt: "blueberry muffin" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -125,14 +125,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", id: "fav", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/chicken_parmesan.jpg", alt: "picture of breaded chicken with cheese and pasta" }),
+							React.createElement("img", { src: "./img/chicken_parmesan.jpg", alt: "picture of breaded chicken with cheese and pasta" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -154,14 +154,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/quesadilla.jpg", alt: "quesadilla, cheese in a tortilla" }),
+							React.createElement("img", { src: "./img/quesadilla.jpg", alt: "quesadilla, cheese in a tortilla" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -183,14 +183,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", id: "fav", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/taco_salad.jpg", alt: "sald in a taco tortilla shell loaded with toppings" }),
+							React.createElement("img", { src: "./img/taco_salad.jpg", alt: "sald in a taco tortilla shell loaded with toppings" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -212,14 +212,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/chicken_sandwich.jpg", alt: "sandwich with slices of chicken, lettuce and other ingredients" }),
+							React.createElement("img", { src: "./img/chicken_sandwich.jpg", alt: "sandwich with slices of chicken, lettuce and other ingredients" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -241,14 +241,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", id: "fav", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/omelette.jpg", alt: "omelett loaded with meats and veggies" }),
+							React.createElement("img", { src: "./img/omelette.jpg", alt: "omelett loaded with meats and veggies" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -270,14 +270,14 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						),
 						React.createElement(
 							"div",
 							{ className: "r-card", id: "fav", onClick: this.recipeClick },
-							React.createElement("img", { src: "../img/risotto.jpg", alt: "risotto with green onion and other garnishes" }),
+							React.createElement("img", { src: "./img/risotto.jpg", alt: "risotto with green onion and other garnishes" }),
 							React.createElement(
 								"p",
 								{ id: "recipe" },
@@ -299,7 +299,7 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									{ id: "peach" },
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								)
 							)
 						)
@@ -318,7 +318,7 @@ var App = function (_React$Component) {
 							React.createElement(
 								"div",
 								{ id: "for-header" },
-								React.createElement("img", { id: "form-rec-pic", src: "../img/chicken_parmesan.jpg", alt: "picture of breaded chicken with cheese and pasta" }),
+								React.createElement("img", { id: "form-rec-pic", src: "./img/chicken_parmesan.jpg", alt: "picture of breaded chicken with cheese and pasta" }),
 								React.createElement(
 									"h2",
 									null,
@@ -404,7 +404,7 @@ var App = function (_React$Component) {
 											React.createElement(
 												"td",
 												null,
-												React.createElement("img", { src: "../img/chicken_breast.jpg", id: "grocery", alt: "raw chicken breast" })
+												React.createElement("img", { src: "./img/chicken_breast.jpg", id: "grocery", alt: "raw chicken breast" })
 											),
 											React.createElement(
 												"td",
@@ -657,7 +657,7 @@ var App = function (_React$Component) {
 								React.createElement(
 									"div",
 									_defineProperty({ id: "peach" }, "id", "favorite"),
-									React.createElement("img", { src: "../img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
+									React.createElement("img", { src: "./img/peach.svg", id: "like", alt: "peach icon indicating favorite recipe" })
 								),
 								React.createElement(
 									"div",
@@ -1178,6 +1178,11 @@ var ShoppingList = function (_React$Component5) {
 				React.Fragment,
 				null,
 				React.createElement(
+					"h2",
+					null,
+					this.props.header
+				),
+				React.createElement(
 					"table",
 					null,
 					React.createElement(
@@ -1259,7 +1264,7 @@ var ListEntry = function (_React$Component6) {
 ReactDOM.render(React.createElement(App, { groceriesData: groceriesData }), document.getElementsByClassName('flex-content')[0]);
 ReactDOM.render(React.createElement(ShoppingList, { list: groceriesData.filter(function (grocery) {
 		return grocery.inventory == 1;
-	}) }), document.getElementsByClassName('list')[0]);
+	}), header: "ShoppingList" }), document.getElementsByClassName('list')[0]);
 ReactDOM.render(React.createElement(ShoppingList, { list: groceriesData.filter(function (grocery) {
 		return grocery.inventory == 0;
-	}) }), document.getElementsByClassName('suggested')[0]);
+	}), header: "Suggested Groceries" }), document.getElementsByClassName('suggested')[0]);
