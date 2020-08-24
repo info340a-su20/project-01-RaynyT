@@ -289,7 +289,7 @@ class App extends React.Component {
 					<div className="add-recipe">
 						<div id='for-header'>
 							<img id='form-rec-pic' src="../img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
-							<h2>Dorito Taco Salad</h2>
+							<h2>Chicken Parmesan</h2>
 							<i className='fas fa-user-alt'></i>
 							<p>1</p>
 						</div>

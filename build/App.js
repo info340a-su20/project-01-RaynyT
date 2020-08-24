@@ -322,7 +322,7 @@ var App = function (_React$Component) {
 								React.createElement(
 									"h2",
 									null,
-									"Dorito Taco Salad"
+									"Chicken Parmesan"
 								),
 								React.createElement("i", { className: "fas fa-user-alt" }),
 								React.createElement(
