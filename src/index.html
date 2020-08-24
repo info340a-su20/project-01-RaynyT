@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">  
+	<meta name="description" content="Dashboard for household grocery inventory.">
+	<meta name="author" content="Rayna Tilley">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>GrocerLogs</title>
+	<!-- Links for fonts -->
+
+	<!-- Links for icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Links for Stylesheets -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<!-- Links for Scripts -->
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+	<main>
+		<!-- Main Flex Container -->
+		<div class="flex-container" id="container">
+
+			<!-- Navigation Sidebar -->
+			<div>
+				<nav>
+					<a href="#">
+						<svg x="0" y="0" viewbox="0 0 280 25" enable-background="new 0 0 280 25" xml:space="preserve">
+							<i class="material-icons" aria-label="dashboard">dashboard</i>
+						</svg>
+						<div>Dashboard</div>
+					</a>
+					<a href="#">
+						<svg x="0" y="0" viewbox="0 0 300 20">
+							<i class='fas fa-warehouse' aria-label="inventory"></i>
+						</svg>
+						<div>Inventory</div>
+					</a>
+					<a href="#">
+						<svg x="0" y="0" viewbox="0 0 300 20">
+							<i class='fas fa-database' aria-label="database"></i>
+						</svg>
+						<div>Database</div>
+					</a>
+					<a href="#">
+						<svg x="0" y="0" viewbox="0 0 300 20">
+							<i class='fas fa-carrot' aria-label="food"></i>
+						</svg>
+						<div>Recipes</div>
+					</a>
+					<a href="#">
+						<svg x="0" y="0" viewbox="0 0 300 20">
+							<i class="fa fa-list-ol" aria-label="shopping-list"></i>
+						</svg>
+						<div>Shopping List</div>
+					</a>
+					<a href="#">
+						<svg x="0" y="0" viewbox="0 0 300 20">
+							<i class="fa fa-quora" aria-label="faq"></i>
+						</svg>
+						<div>FAQ</div>
+					</a>
+				</nav>
+			</div>
+
+			<!-- Page Body -->
+			<div class="flex-body">
+
+				<!-- Header -->
+				<div>
+					<header>
+						<div class="flex-header">
+							<div class="gl-logo">
+								<img src="../img/logo.png" alt="a refridgerator logo">
+							</div>
+							<div>
+								<h1>GrocerLogs</h1>
+							</div>
+							<div class="searchBox" role="search">
+								<label for="search"></label>
+								<input name="search" type="text" placeholder="Search..." aria-label="Search">
+								<label for="submit"></label>
+								<button><i aria-label="Submit" class="fas fa-search fa-flip-horizontal"></i></button>
+							</div>
+						</div>
+					</header>
+				</div>
+
+				<!-- Page Content -->
+				<div class="flex-content">
+
+					<!-- Grocery Cards -->
+					<div class="flex-grocery-cards"></div>
+
+					<!-- Recipe Cards -->
+					<div class="flex-recipe-cards">
+						<!--#1-->
+						<div class="r-card">
+							<img src="../img/tacos.jpg" alt="a couple of tacos loaded with veggies, cheese and meat">
+							<p id="recipe">Tacos</p>
+							<p>7/8 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#2-->
+						<div class="r-card">
+							<img src="../img/blueberry_muffin.jpg" alt="blueberry muffin">
+							<p id="recipe">Blueberry Muffins</p>
+							<p>4/6 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#3-->
+						<div class="r-card" id="fav">
+							<img src="../img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta">
+							<p id="recipe">Chicken Parmesan</p>
+							<p>5/13 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#4-->
+						<div class="r-card">
+							<img src="../img/quesadilla.jpg" alt="quesadilla, cheese in a tortilla">
+							<p id="recipe">Quesadilla</p>
+							<p>1/2 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#5-->
+						<div class="r-card" id="fav">
+							<img src="../img/taco_salad.jpg" alt="sald in a taco tortilla shell loaded with toppings">
+							<p id="recipe">Taco Salad</p>
+							<p>7/9 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#6-->
+						<div class="r-card">
+							<img src="../img/chicken_sandwich.jpg" alt="sandwich with slices of chicken, lettuce and other ingredients">
+							<p id="recipe">Chicken Sandwich</p>
+							<p>2/5 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#7-->
+						<div class="r-card" id="fav">
+							<img src="../img/omelette.jpg" alt="omelett loaded with meats and veggies">
+							<p id="recipe">Omelette</p>
+							<p>0/6 Ingredients</p>
+							<div class="flex-recipe-buttons">
+								<div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div>
+						<!--#8-->
+						<div class="r-card" id="fav">
+							<img src="../img/risotto.jpg" alt="risotto with green onion and other garnishes">
+							<p id="recipe">Risotto</p>
+							<p>1/7 Ingredients</p>
+							<div class="flex-recipe-buttons">
+							   <div id="add">
+									<i class="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+								</div>
+								<div id="peach">
+									<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe">
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Aside -->
+			<div class="flex-aside">
+				<div class="settings">
+					<div>
+						<img src="../img/pirvu_fam.jpg" alt="image of the couple for who this account belongs to">
+					</div>
+					<div>
+						<p id="account">Pirvu Family</p>
+					</div>
+					<div>
+						<i class="fa fa-ellipsis-v" aria-label="ellipse/more icon" style="font-size: 30px"></i>
+					</div>
+				</div>
+
+				<div class="list">
+					<h2>Shopping List</h2>
+
+				</div>
+
+				<div class="suggested">
+					<h3>Suggested Groceries</h3>
+
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<p>Author: Rayna Tilley</p>
+		<p>Copyright &copy; 2020</p>
+		<p class="contact">Contact Rayna @</p>
+		<address>
+			<a href="mailto:raynat6@uw.edu">raynat6@uw.edu</a>
+		</address>
+	</footer>
+
+	<!-- React Scripts -->
+	<script type="text/javascript" src="../build/Groceries.js"></script>
+</body>
+</html>
