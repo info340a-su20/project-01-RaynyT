@@ -169,7 +169,7 @@ class App extends React.Component {
 
 				<div className="flex-recipe-cards">
 					<div className="r-card" onClick={this.recipeClick}>
-						<img src="../img/tacos.jpg" alt="a couple of tacos loaded with veggies, cheese and meat" />
+						<img src="./img/tacos.jpg" alt="a couple of tacos loaded with veggies, cheese and meat" />
 						<p id="recipe">Tacos</p>
 						<p>7/8 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -177,13 +177,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" onClick={this.recipeClick}>
-						<img src="../img/blueberry_muffin.jpg" alt="blueberry muffin" />
+						<img src="./img/blueberry_muffin.jpg" alt="blueberry muffin" />
 						<p id="recipe">Blueberry Muffins</p>
 						<p>4/6 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -191,13 +191,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" id="fav" onClick={this.recipeClick}>
-						<img src="../img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
+						<img src="./img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
 						<p id="recipe">Chicken Parmesan</p>
 						<p>5/13 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -205,13 +205,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" onClick={this.recipeClick}>
-						<img src="../img/quesadilla.jpg" alt="quesadilla, cheese in a tortilla" />
+						<img src="./img/quesadilla.jpg" alt="quesadilla, cheese in a tortilla" />
 						<p id="recipe">Quesadilla</p>
 						<p>1/2 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -219,13 +219,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" id="fav" onClick={this.recipeClick}>
-						<img src="../img/taco_salad.jpg" alt="sald in a taco tortilla shell loaded with toppings" />
+						<img src="./img/taco_salad.jpg" alt="sald in a taco tortilla shell loaded with toppings" />
 						<p id="recipe">Taco Salad</p>
 						<p>7/9 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -233,13 +233,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" onClick={this.recipeClick}>
-						<img src="../img/chicken_sandwich.jpg" alt="sandwich with slices of chicken, lettuce and other ingredients" />
+						<img src="./img/chicken_sandwich.jpg" alt="sandwich with slices of chicken, lettuce and other ingredients" />
 						<p id="recipe">Chicken Sandwich</p>
 						<p>2/5 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -247,13 +247,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" id="fav" onClick={this.recipeClick}>
-						<img src="../img/omelette.jpg" alt="omelett loaded with meats and veggies" />
+						<img src="./img/omelette.jpg" alt="omelett loaded with meats and veggies" />
 						<p id="recipe">Omelette</p>
 						<p>0/6 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -261,13 +261,13 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div>
 
 					<div className="r-card" id="fav" onClick={this.recipeClick}>
-						<img src="../img/risotto.jpg" alt="risotto with green onion and other garnishes" />
+						<img src="./img/risotto.jpg" alt="risotto with green onion and other garnishes" />
 						<p id="recipe">Risotto</p>
 						<p>1/7 Ingredients</p>
 						<div className="flex-recipe-buttons">
@@ -275,7 +275,7 @@ class App extends React.Component {
 								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
 							</div>
 							<div id="peach">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 						</div>
 					</div> 
@@ -288,7 +288,7 @@ class App extends React.Component {
 				<div className="add-rows">
 					<div className="add-recipe">
 						<div id='for-header'>
-							<img id='form-rec-pic' src="../img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
+							<img id='form-rec-pic' src="./img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
 							<h2>Chicken Parmesan</h2>
 							<i className='fas fa-user-alt'></i>
 							<p>1</p>
@@ -305,7 +305,7 @@ class App extends React.Component {
 									<th><p>&nbsp;</p></th>
 								</tr>
 								<tr>
-									<td><img src="../img/chicken_breast.jpg" id="grocery" alt="raw chicken breast" /></td>
+									<td><img src="./img/chicken_breast.jpg" id="grocery" alt="raw chicken breast" /></td>
 									<td><p>Chicken Breast</p></td>
 									<td><p>1</p></td>
 									<td><p>Unit</p></td>
@@ -349,7 +349,7 @@ class App extends React.Component {
 						</div>
 						<div>
 							<div id="peach" id="favorite">
-								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+								<img src="./img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
 							</div>
 							<div id="add-all-button">
 								 <button type="button">Add Needed</button> 
@@ -579,6 +579,7 @@ class ShoppingList extends React.Component {
 
 		return (
 			<React.Fragment>
+			<h2>{this.props.header}</h2>
 			<table>
 				<tbody>
 					{list.map((item) => {
@@ -614,5 +615,5 @@ class ListEntry extends React.Component {
 }
 
 ReactDOM.render(<App groceriesData={groceriesData} />, document.getElementsByClassName('flex-content')[0]);
-ReactDOM.render(<ShoppingList list={groceriesData.filter(grocery => grocery.inventory == 1)} />, document.getElementsByClassName('list')[0]);
-ReactDOM.render(<ShoppingList list={groceriesData.filter(grocery => grocery.inventory == 0)} />, document.getElementsByClassName('suggested')[0]);
+ReactDOM.render(<ShoppingList list={groceriesData.filter(grocery => grocery.inventory == 1)} header="ShoppingList"/>, document.getElementsByClassName('list')[0]);
+ReactDOM.render(<ShoppingList list={groceriesData.filter(grocery => grocery.inventory == 0)} header="Suggested Groceries" />, document.getElementsByClassName('suggested')[0]);
