@@ -17,7 +17,7 @@ let groceriesData = [
 {"grocery":"Tyson Boneless Skinless Chicken Breast Tenderloins","group":"protein","quantity":"6","measurement":"unit","store":"Kroger","expiration":"365","date":"","inventory":"0","img":"https://www.kroger.com/product/images/medium/front/0002370016222"},
 {"grocery":"Hormel Always Tender Lemon Garlic Pork Loin Filet","group":"protein","quantity":"1","measurement":"unit","store":"Kroger","expiration":"365","date":"","inventory":"0","img":"https://www.kroger.com/product/images/medium/front/0003760025836"},
 {"grocery":"Natural & Fresh Pork Boneless Center Cut Chops (About 4 Chops per Pack)","group":"protein","quantity":"4","measurement":"unit","store":"Kroger","expiration":"365","date":"2020-07-17T13:15:32Z","inventory":"3","img":"https://www.kroger.com/product/images/medium/front/0020337400000"},
-{"grocery":"Smithfield Sliced Maple Flavored Boneless Ham Limit 1 per Order","group":"protein","quantity":"1","measurement":"unit","store":"Kroger","expiration":"365","date":"2020-08-22T10:02:53Z","inventory":"2","img":"https://www.Kroger.com/p/smithfield-sliced-maple-flavored-boneless-ham-limit-1-per-order/0025389000000"},
+{"grocery":"Smithfield Sliced Maple Flavored Boneless Ham Limit 1 per Order","group":"protein","quantity":"1","measurement":"unit","store":"Kroger","expiration":"365","date":"2020-08-22T10:02:53Z","inventory":"2","img":"https://www.kroger.com/product/images/medium/front/0025389000000?fbclid=IwAR34PtfEZja2kWZPfYIdnYH0TfJg977kmHB7bfSX886XNSYNYN8QQoEet48"},
 {"grocery":"Jennie-O Cured Turkey Bacon","group":"protein","quantity":"12","measurement":"ounce","store":"Kroger","expiration":"365","date":"","inventory":"0","img":"https://www.kroger.com/product/images/medium/front/0004222287000"},
 {"grocery":"Oscar Mayer Naturally Hardwood Smoked Bacon Mega Pack","group":"protein","quantity":"22","measurement":"ounce","store":"Kroger","expiration":"365","date":"2020-08-04T14:55:14Z","inventory":"4","img":"https://www.kroger.com/product/images/medium/front/0004470007648"},
 {"grocery":"Applegate Naturals Uncured Genoa Salami","group":"protein","quantity":"4","measurement":"ounce","store":"Kroger","expiration":"14","date":"","inventory":"0","img":"https://www.kroger.com/product/images/medium/front/0002531785600"},
@@ -168,7 +168,7 @@ class Groceries extends React.Component {
 		return (
 			<React.Fragment>
 			{Object.keys(groceryCards).map((header) => {
-				return (<GroceryCard key={header} header={header} groceries={groceryCards[header]} entryClick={this.entryClick} />);
+				return (<GroceryCard key={header} header={header} groceries={groceryCards[header].filter(grocery => grocery.inventory > 0)} entryClick={this.entryClick} />);
 			})}
 			</React.Fragment>
 		);
@@ -176,10 +176,26 @@ class Groceries extends React.Component {
 }
 
 class GroceryCard extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {location: 0};
+
+		this.scrollClick = this.scrollClick.bind(this);
+	}
+
+	scrollClick(event) {
+		event.preventDefault();
+		let moveUp = event.target.parentNode.getElementsByTagName("i")[0].className.includes("scroll-up");
+		if (moveUp) {
+			this.setState({location: this.state.location + (this.state.location + 5 > this.props.groceries.length ? 0 : 5)});
+		} else {
+			this.setState({location: this.state.location - (this.state.location - 5 < 0 ? this.state.location : 5)});
+		}
+	}
+
 	render() {
 		let header = this.props.header;
-		let groceries = this.props.groceries;
-		let count = 0;
+		let groceries = this.props.groceries.slice(this.state.location, this.state.location + 5);
 
 		return (
 			<div className="flex-g-card" id={header.toLowerCase()}>
@@ -191,7 +207,10 @@ class GroceryCard extends React.Component {
 						})}
 					</tbody>
 				</table>
-				<i className="fa fa-ellipsis-h fa-lg" aria-label="ellipse/more icon"></i>
+				<div>
+					<button onClick={this.scrollClick}><i className="fa fa-ellipsis-h fa-lg scroll-up" aria-label="ellipse/more icon"></i></button>
+					<button onClick={this.scrollClick}><i className="fa fa-ellipsis-h fa-lg scroll-down" aria-label="ellipse/more icon"></i></button>
+				</div>
 			</div>
 		);
 	}
