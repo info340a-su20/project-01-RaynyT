@@ -121,6 +121,303 @@ let groceriesData = [
 {"grocery":"Ragu Old World Style Traditional Pasta Sauce","group":"sauce","quantity":"24","measurement":"ounce","store":"Kroger","expiration":"365","date":"2020-06-24T12:34:35Z","inventory":"3","img":"https://www.kroger.com/product/images/medium/front/0003620000250"}
 ]
 
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {page: 'main'};
+
+		this.recipeClick = this.recipeClick.bind(this);
+	}
+
+	recipeClick(event) {
+		event.preventDefault();
+		if (this.state.page == 'main') {
+			this.setState({page: 'recipe'});
+		} else {
+			this.setState({page: 'main'});
+		}
+	}
+
+	render() {
+		if (this.state.page == 'main') {
+			return(
+				<React.Fragment>
+				<div className="flex-grocery-cards">
+					<Groceries groceries={this.props.groceriesData} />
+				</div>
+
+				<div className="flex-recipe-cards">
+					<div className="r-card" onClick={this.recipeClick}>
+						<img src="../img/tacos.jpg" alt="a couple of tacos loaded with veggies, cheese and meat" />
+						<p id="recipe">Tacos</p>
+						<p>7/8 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" onClick={this.recipeClick}>
+						<img src="../img/blueberry_muffin.jpg" alt="blueberry muffin" />
+						<p id="recipe">Blueberry Muffins</p>
+						<p>4/6 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" id="fav" onClick={this.recipeClick}>
+						<img src="../img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
+						<p id="recipe">Chicken Parmesan</p>
+						<p>5/13 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" onClick={this.recipeClick}>
+						<img src="../img/quesadilla.jpg" alt="quesadilla, cheese in a tortilla" />
+						<p id="recipe">Quesadilla</p>
+						<p>1/2 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" id="fav" onClick={this.recipeClick}>
+						<img src="../img/taco_salad.jpg" alt="sald in a taco tortilla shell loaded with toppings" />
+						<p id="recipe">Taco Salad</p>
+						<p>7/9 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" onClick={this.recipeClick}>
+						<img src="../img/chicken_sandwich.jpg" alt="sandwich with slices of chicken, lettuce and other ingredients" />
+						<p id="recipe">Chicken Sandwich</p>
+						<p>2/5 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" id="fav" onClick={this.recipeClick}>
+						<img src="../img/omelette.jpg" alt="omelett loaded with meats and veggies" />
+						<p id="recipe">Omelette</p>
+						<p>0/6 Ingredients</p>
+						<div className="flex-recipe-buttons">
+							<div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div>
+
+					<div className="r-card" id="fav" onClick={this.recipeClick}>
+						<img src="../img/risotto.jpg" alt="risotto with green onion and other garnishes" />
+						<p id="recipe">Risotto</p>
+						<p>1/7 Ingredients</p>
+						<div className="flex-recipe-buttons">
+						   <div id="add">
+								<i className="fa fa-plus-circle fa-lg" aria-label="add icon"></i>
+							</div>
+							<div id="peach">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+						</div>
+					</div> 
+				</div>
+				</React.Fragment>
+			);
+		} else {
+			return (
+				<React.Fragment>
+				<div className="add-rows">
+					<div className="add-recipe">
+						<div id='for-header'>
+							<img id='form-rec-pic' src="../img/chicken_parmesan.jpg" alt="picture of breaded chicken with cheese and pasta" />
+							<h2>Dorito Taco Salad</h2>
+							<i className='fas fa-user-alt'></i>
+							<p>1</p>
+						</div>
+						<div>
+							<table>
+								<tr>
+									<th><p>&nbsp;</p></th>
+									<th><h4>Ingredient</h4></th>
+									<th><h4>Qauntity</h4></th>
+									<th><h4>Measurement</h4></th>
+									<th><h4>Inventory</h4></th>
+									<th><p>&nbsp;</p></th>
+								</tr>
+								<tr>
+									<td><img src="../img/chicken_breast.jpg" id="grocery" alt="raw chicken breast" /></td>
+									<td><p>Chicken Breast</p></td>
+									<td><p>1</p></td>
+									<td><p>Unit</p></td>
+									<td><p id="i-caution">1</p></td>
+									<td><i className="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+								</tr>
+								<tr>
+									<td><img src="" /></td>
+									<td><p>Seasoned Breadcrumbs</p></td>
+									<td><p>1/4</p></td>
+									<td><p>Cup</p></td>
+									<td><p>0</p></td>
+									<td><i className="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+								</tr>
+								<tr>
+									<td><img src="" /></td>
+									<td><p>Egg White</p></td>
+									<td><p>1</p></td>
+									<td><p>Tablespoon</p></td>
+									<td><p>0</p></td>
+									<td><i className="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+								</tr>
+								<tr>
+									<td><img src="" /></td>
+									<td><p>Olive Oil</p></td>
+									<td><p>1</p></td>
+									<td><p>Tablespoon</p></td>
+									<td><p>27</p></td>
+									<td><i className="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+								</tr>
+								<tr>
+									<td><img src="" /></td>
+									<td><p>Flour</p></td>
+									<td><p>1</p></td>
+									<td><p>Tablespoon</p></td>
+									<td><p>34</p></td>
+									<td><i className="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
+								</tr>
+							</table>
+						</div>
+						<div>
+							<div id="peach" id="favorite">
+								<img src="../img/peach.svg" id="like" alt="peach icon indicating favorite recipe" />
+							</div>
+							<div id="add-all-button">
+								 <button type="button">Add Needed</button> 
+							</div>
+						</div>
+					</div>
+					<div>
+						<form>
+							<div id="divGrocRight">
+								<h2>New Grocery</h2>
+								<label for="grocname">Name:</label>
+								<input type="text" id="grocname" />
+								<label for="type">Food Group/Diet:</label>
+								<select>
+									<input type="checkbox" id="type" name="type" value="vegetable" />
+									<label for="type">Vegetable</label>
+									<input type="checkbox" id="type" name="type" value="fruit" />
+									<label for="type">Fruit</label>
+									<input type="checkbox" id="type" name="type" value="fish-seafood" />
+									<label for="type">Fish/Seafood</label>
+									<input type="checkbox" id="type" name="type" value="protein" />
+									<label for="type">Protein</label>
+									<input type="checkbox" id="type" name="type" value="dairy" />
+									<label for="type">Dairy</label>
+									<input type="checkbox" id="type" name="type" value="fats" />
+									<label for="type">Fats</label>
+									<input type="checkbox" id="type" name="type" value="sweets" />
+									<label for="type">Sweets</label>
+									<input type="checkbox" id="type" name="type" value="snack" />
+									<label for="type">Snack</label>
+									<input type="checkbox" id="type" name="type" value="condiment" />
+									<label for="type">Condiment</label>
+									<input type="checkbox" id="type" name="type" value="sauce" />
+									<label for="type">Sauce</label>
+									<input type="checkbox" id="type" name="type" value="nd-drink" />
+									<label for="type">Non-Dairy Drink</label>
+									<input type="checkbox" id="type" name="type" value="grass-fed" />
+									<label for="type">Grass-fed</label>
+									<input type="checkbox" id="type" name="type" value="free-range" />
+									<label for="type">Free-range</label>
+									<input type="checkbox" id="type" name="type" value="gluten-free" />
+									<label for="type">Gluten-free</label>
+									<input type="checkbox" id="type" name="type" value="all-natural" />
+									<label for="type">All Natural</label>
+									<input type="checkbox" id="type" name="type" value="pre-made" />
+									<label for="type">Pre-Made Meal</label>
+								</select>
+							</div>
+							<div id="divGrocLeft">
+								<label for="quantity">Quantity:</label>
+								<input type="number" max="1825" min="0.05" step="0.05" value="1" />
+								<label for="measurement">Measurement:</label>
+								<select id="store">
+									<option value="choose" disabled selected>Choose</option>
+									<option value="tablespoon">Tablespoon</option>
+									<option value="teaspoon">Teaspoon</option>
+									<option value="cup">Cup</option>
+									<option value="pint">Pint</option>
+									<option value="quart">Quart</option>
+									<option value="gallon">Gallon</option>
+									<option value="ounce">Ounce</option>
+									<option value="pound">Pound</option>
+									<option value="pint">Pint</option>
+									<option value="dash">Dash/Pinch</option>
+									<option value="pint">Pint</option>
+								</select>
+								<label for="store">Store:</label>
+								<select id="store">
+									<option value="choose" disabled selected>Choose</option>
+									<option value="albertsons">Albertsons LLC</option>
+									<option value="aholddelhaize">Ahold Delhaize</option>
+									<option value="kroger">Kroger</option>
+									<option value="target">Target</option>
+									<option value="walmart">Walmart</option>
+									<option value="other">Other</option>
+								</select>
+								<label for="expiration">Expiration (Days):</label>
+								<input type="number" max="1825" min="1" step="1" value="7" />
+								<label for="item-pic">Item Picture:</label>
+								<input type="file" accept="image/*" />
+							</div>
+						</form>
+						<button type="button">Submit</button>
+					</div>
+				</div>
+				</React.Fragment>
+			);
+		}
+	}
+}
+
 class Groceries extends React.Component {
 	constructor(props) {
 		super(props);
@@ -307,6 +604,6 @@ class ListEntry extends React.Component {
 	}
 }
 
-ReactDOM.render(<Groceries groceries={groceriesData} />, document.getElementsByClassName('flex-grocery-cards')[0]);
+ReactDOM.render(<App groceriesData={groceriesData} />, document.getElementsByClassName('flex-content')[0]);
 ReactDOM.render(<ShoppingList list={groceriesData.filter(grocery => grocery.inventory == 1)} />, document.getElementsByClassName('list')[0]);
 ReactDOM.render(<ShoppingList list={groceriesData.filter(grocery => grocery.inventory == 0)} />, document.getElementsByClassName('suggested')[0]);
