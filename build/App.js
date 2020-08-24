@@ -18,9 +18,13 @@ var App = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-		_this.state = { page: 'main' };
+		_this.state = {
+			page: 'main',
+			groceries: _this.props.groceriesData
+		};
 
 		_this.recipeClick = _this.recipeClick.bind(_this);
+		_this.submitClick = _this.submitClick.bind(_this);
 		return _this;
 	}
 
@@ -35,6 +39,24 @@ var App = function (_React$Component) {
 			}
 		}
 	}, {
+		key: "submitClick",
+		value: function submitClick(event) {
+			event.preventDefault();
+			console.log(event.target.parentNode.getElementsByTagName("form")[0]);
+			var form = event.target.parentNode.getElementsByTagName("form")[0];
+			grocery = {
+				grocery: form.querySelector('#grocname').value,
+				expiration: Date.now() - 50,
+				date: Date.now(),
+				inventory: 1,
+				img: ""
+			};
+			var groceries = this.state.groceries;
+			groceries.push(grocery);
+			this.setState({ groceries: groceries });
+			console.log(this.state.groceries);
+		}
+	}, {
 		key: "render",
 		value: function render() {
 			if (this.state.page == 'main') {
@@ -44,7 +66,7 @@ var App = function (_React$Component) {
 					React.createElement(
 						"div",
 						{ className: "flex-grocery-cards" },
-						React.createElement(Groceries, { groceries: this.props.groceriesData })
+						React.createElement(Groceries, { groceries: this.state.groceries })
 					),
 					React.createElement(
 						"div",
@@ -316,311 +338,315 @@ var App = function (_React$Component) {
 									"table",
 									null,
 									React.createElement(
-										"tr",
+										"tbody",
 										null,
 										React.createElement(
-											"th",
+											"tr",
 											null,
 											React.createElement(
-												"p",
+												"th",
 												null,
-												"\xA0"
-											)
-										),
-										React.createElement(
-											"th",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"\xA0"
+												)
+											),
 											React.createElement(
-												"h4",
+												"th",
 												null,
-												"Ingredient"
-											)
-										),
-										React.createElement(
-											"th",
-											null,
+												React.createElement(
+													"h4",
+													null,
+													"Ingredient"
+												)
+											),
 											React.createElement(
-												"h4",
+												"th",
 												null,
-												"Qauntity"
-											)
-										),
-										React.createElement(
-											"th",
-											null,
+												React.createElement(
+													"h4",
+													null,
+													"Qauntity"
+												)
+											),
 											React.createElement(
-												"h4",
+												"th",
 												null,
-												"Measurement"
-											)
-										),
-										React.createElement(
-											"th",
-											null,
+												React.createElement(
+													"h4",
+													null,
+													"Measurement"
+												)
+											),
 											React.createElement(
-												"h4",
+												"th",
 												null,
-												"Inventory"
-											)
-										),
-										React.createElement(
-											"th",
-											null,
+												React.createElement(
+													"h4",
+													null,
+													"Inventory"
+												)
+											),
 											React.createElement(
-												"p",
+												"th",
 												null,
-												"\xA0"
+												React.createElement(
+													"p",
+													null,
+													"\xA0"
+												)
 											)
-										)
-									),
-									React.createElement(
-										"tr",
-										null,
-										React.createElement(
-											"td",
-											null,
-											React.createElement("img", { src: "../img/chicken_breast.jpg", id: "grocery", alt: "raw chicken breast" })
 										),
 										React.createElement(
-											"td",
+											"tr",
 											null,
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"Chicken Breast"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement("img", { src: "../img/chicken_breast.jpg", id: "grocery", alt: "raw chicken breast" })
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"1"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"Chicken Breast"
+												)
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"Unit"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"1"
+												)
+											),
 											React.createElement(
-												"p",
-												{ id: "i-caution" },
-												"1"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
-										)
-									),
-									React.createElement(
-										"tr",
-										null,
-										React.createElement(
-											"td",
-											null,
-											React.createElement("img", { src: "" })
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
+												"td",
 												null,
-												"Seasoned Breadcrumbs"
+												React.createElement(
+													"p",
+													null,
+													"Unit"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													{ id: "i-caution" },
+													"1"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
 											)
 										),
 										React.createElement(
-											"td",
+											"tr",
 											null,
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"1/4"
+												React.createElement("img", { src: "" })
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"Seasoned Breadcrumbs"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"1/4"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"Cup"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"0"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
 											)
 										),
 										React.createElement(
-											"td",
+											"tr",
 											null,
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"Cup"
+												React.createElement("img", { src: "" })
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"Egg White"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"1"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"Tablespoon"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"0"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
 											)
 										),
 										React.createElement(
-											"td",
+											"tr",
 											null,
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"0"
+												React.createElement("img", { src: "" })
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"Olive Oil"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"1"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"Tablespoon"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement(
+													"p",
+													null,
+													"27"
+												)
+											),
+											React.createElement(
+												"td",
+												null,
+												React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
 											)
 										),
 										React.createElement(
-											"td",
-											null,
-											React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
-										)
-									),
-									React.createElement(
-										"tr",
-										null,
-										React.createElement(
-											"td",
-											null,
-											React.createElement("img", { src: "" })
-										),
-										React.createElement(
-											"td",
+											"tr",
 											null,
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"Egg White"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement("img", { src: "" })
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"1"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"Flour"
+												)
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"Tablespoon"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"1"
+												)
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"0"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
-										)
-									),
-									React.createElement(
-										"tr",
-										null,
-										React.createElement(
-											"td",
-											null,
-											React.createElement("img", { src: "" })
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"Tablespoon"
+												)
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"Olive Oil"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
+												React.createElement(
+													"p",
+													null,
+													"34"
+												)
+											),
 											React.createElement(
-												"p",
+												"td",
 												null,
-												"1"
+												React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
 											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
-												null,
-												"Tablespoon"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
-												null,
-												"27"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
-										)
-									),
-									React.createElement(
-										"tr",
-										null,
-										React.createElement(
-											"td",
-											null,
-											React.createElement("img", { src: "" })
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
-												null,
-												"Flour"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
-												null,
-												"1"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
-												null,
-												"Tablespoon"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement(
-												"p",
-												null,
-												"34"
-											)
-										),
-										React.createElement(
-											"td",
-											null,
-											React.createElement("i", { className: "fa fa-cart-plus fa-lg", "aria-label": "add/list icon" })
 										)
 									)
 								)
@@ -660,112 +686,96 @@ var App = function (_React$Component) {
 									),
 									React.createElement(
 										"label",
-										{ "for": "grocname" },
-										"Name:"
+										null,
+										"Name:",
+										React.createElement("input", { type: "text", id: "grocname" })
 									),
-									React.createElement("input", { type: "text", id: "grocname" }),
 									React.createElement(
 										"label",
-										{ "for": "type" },
+										null,
 										"Food Group/Diet:"
 									),
 									React.createElement(
 										"select",
 										null,
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "vegetable" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "vegetable" },
 											"Vegetable"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "fruit" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "fruit" },
 											"Fruit"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "fish-seafood" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "fish/seafood" },
 											"Fish/Seafood"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "protein" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "protein" },
 											"Protein"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "dairy" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "dairy" },
 											"Dairy"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "fats" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "fats" },
 											"Fats"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "sweets" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "Sweets" },
 											"Sweets"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "snack" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "snack" },
 											"Snack"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "condiment" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "condiment" },
 											"Condiment"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "sauce" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "sauce" },
 											"Sauce"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "nd-drink" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "non-dairy drink" },
 											"Non-Dairy Drink"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "grass-fed" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "grass-fed" },
 											"Grass-fed"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "free-range" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "free-rang" },
 											"Free-range"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "gluten-free" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "gluten-free" },
 											"Gluten-free"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "all-natural" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "all natural" },
 											"All Natural"
 										),
-										React.createElement("input", { type: "checkbox", id: "type", name: "type", value: "pre-made" }),
 										React.createElement(
-											"label",
-											{ "for": "type" },
+											"option",
+											{ defaultValue: "pre-made meal" },
 											"Pre-Made Meal"
 										)
 									)
@@ -775,13 +785,13 @@ var App = function (_React$Component) {
 									{ id: "divGrocLeft" },
 									React.createElement(
 										"label",
-										{ "for": "quantity" },
+										null,
 										"Quantity:"
 									),
-									React.createElement("input", { type: "number", max: "1825", min: "0.05", step: "0.05", value: "1" }),
+									React.createElement("input", { type: "number", max: "1825", min: "0.05", step: "0.05", defaultValue: "1", id: "amount" }),
 									React.createElement(
 										"label",
-										{ "for": "measurement" },
+										null,
 										"Measurement:"
 									),
 									React.createElement(
@@ -789,68 +799,68 @@ var App = function (_React$Component) {
 										{ id: "store" },
 										React.createElement(
 											"option",
-											{ value: "choose", disabled: true, selected: true },
+											{ defaultValue: "choose", disabled: true, selected: true },
 											"Choose"
 										),
 										React.createElement(
 											"option",
-											{ value: "tablespoon" },
+											{ defaultValue: "tablespoon" },
 											"Tablespoon"
 										),
 										React.createElement(
 											"option",
-											{ value: "teaspoon" },
+											{ defaultValue: "teaspoon" },
 											"Teaspoon"
 										),
 										React.createElement(
 											"option",
-											{ value: "cup" },
+											{ defaultValue: "cup" },
 											"Cup"
 										),
 										React.createElement(
 											"option",
-											{ value: "pint" },
+											{ defaultValue: "pint" },
 											"Pint"
 										),
 										React.createElement(
 											"option",
-											{ value: "quart" },
+											{ defaultValue: "quart" },
 											"Quart"
 										),
 										React.createElement(
 											"option",
-											{ value: "gallon" },
+											{ defaultValue: "gallon" },
 											"Gallon"
 										),
 										React.createElement(
 											"option",
-											{ value: "ounce" },
+											{ defaultValue: "ounce" },
 											"Ounce"
 										),
 										React.createElement(
 											"option",
-											{ value: "pound" },
+											{ defaultValue: "pound" },
 											"Pound"
 										),
 										React.createElement(
 											"option",
-											{ value: "pint" },
+											{ defaultValue: "pint" },
 											"Pint"
 										),
 										React.createElement(
 											"option",
-											{ value: "dash" },
+											{ defaultValue: "dash" },
 											"Dash/Pinch"
 										),
 										React.createElement(
 											"option",
-											{ value: "pint" },
+											{ defaultValue: "pint" },
 											"Pint"
 										)
 									),
 									React.createElement(
 										"label",
-										{ "for": "store" },
+										null,
 										"Store:"
 									),
 									React.createElement(
@@ -858,49 +868,49 @@ var App = function (_React$Component) {
 										{ id: "store" },
 										React.createElement(
 											"option",
-											{ value: "choose", disabled: true, selected: true },
+											{ defaultValue: "choose", disabled: true, selected: true },
 											"Choose"
 										),
 										React.createElement(
 											"option",
-											{ value: "albertsons" },
+											{ defaultValue: "albertsons" },
 											"Albertsons LLC"
 										),
 										React.createElement(
 											"option",
-											{ value: "aholddelhaize" },
+											{ defaultValue: "aholddelhaize" },
 											"Ahold Delhaize"
 										),
 										React.createElement(
 											"option",
-											{ value: "kroger" },
+											{ defaultValue: "kroger" },
 											"Kroger"
 										),
 										React.createElement(
 											"option",
-											{ value: "target" },
+											{ defaultValue: "target" },
 											"Target"
 										),
 										React.createElement(
 											"option",
-											{ value: "walmart" },
+											{ defaultValue: "walmart" },
 											"Walmart"
 										),
 										React.createElement(
 											"option",
-											{ value: "other" },
+											{ defaultValue: "other" },
 											"Other"
 										)
 									),
 									React.createElement(
 										"label",
-										{ "for": "expiration" },
+										null,
 										"Expiration (Days):"
 									),
-									React.createElement("input", { type: "number", max: "1825", min: "1", step: "1", value: "7" }),
+									React.createElement("input", { type: "number", max: "1825", min: "1", step: "1", defaultValue: "7" }),
 									React.createElement(
 										"label",
-										{ "for": "item-pic" },
+										null,
 										"Item Picture:"
 									),
 									React.createElement("input", { type: "file", accept: "image/*" })
@@ -908,7 +918,7 @@ var App = function (_React$Component) {
 							),
 							React.createElement(
 								"button",
-								{ type: "button" },
+								{ onClick: this.submitClick, type: "button" },
 								"Submit"
 							)
 						)

@@ -124,9 +124,13 @@ let groceriesData = [
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {page: 'main'};
+		this.state = {
+			page: 'main',
+			groceries: this.props.groceriesData
+		};
 
 		this.recipeClick = this.recipeClick.bind(this);
+		this.submitClick = this.submitClick.bind(this);
 	}
 
 	recipeClick(event) {
@@ -138,12 +142,29 @@ class App extends React.Component {
 		}
 	}
 
+	submitClick(event) {
+		event.preventDefault();
+		console.log(event.target.parentNode.getElementsByTagName("form")[0]);
+		let form = event.target.parentNode.getElementsByTagName("form")[0];
+		grocery = {
+			grocery: form.querySelector('#grocname').value,
+			expiration: Date.now() - 50,
+			date: Date.now(),
+			inventory: 1,
+			img: ""
+		}
+		let groceries = this.state.groceries;
+		groceries.push(grocery);
+		this.setState({groceries: groceries});
+		console.log(this.state.groceries);
+	}
+
 	render() {
 		if (this.state.page == 'main') {
 			return(
 				<React.Fragment>
 				<div className="flex-grocery-cards">
-					<Groceries groceries={this.props.groceriesData} />
+					<Groceries groceries={this.state.groceries} />
 				</div>
 
 				<div className="flex-recipe-cards">
@@ -274,6 +295,7 @@ class App extends React.Component {
 						</div>
 						<div>
 							<table>
+							<tbody>
 								<tr>
 									<th><p>&nbsp;</p></th>
 									<th><h4>Ingredient</h4></th>
@@ -322,6 +344,7 @@ class App extends React.Component {
 									<td><p>34</p></td>
 									<td><i className="fa fa-cart-plus fa-lg" aria-label="add/list icon"></i></td>
 								</tr>
+							</tbody>
 							</table>
 						</div>
 						<div>
@@ -337,79 +360,65 @@ class App extends React.Component {
 						<form>
 							<div id="divGrocRight">
 								<h2>New Grocery</h2>
-								<label for="grocname">Name:</label>
+								<label>
+								Name:
 								<input type="text" id="grocname" />
-								<label for="type">Food Group/Diet:</label>
+								</label>
+								<label>Food Group/Diet:</label>
 								<select>
-									<input type="checkbox" id="type" name="type" value="vegetable" />
-									<label for="type">Vegetable</label>
-									<input type="checkbox" id="type" name="type" value="fruit" />
-									<label for="type">Fruit</label>
-									<input type="checkbox" id="type" name="type" value="fish-seafood" />
-									<label for="type">Fish/Seafood</label>
-									<input type="checkbox" id="type" name="type" value="protein" />
-									<label for="type">Protein</label>
-									<input type="checkbox" id="type" name="type" value="dairy" />
-									<label for="type">Dairy</label>
-									<input type="checkbox" id="type" name="type" value="fats" />
-									<label for="type">Fats</label>
-									<input type="checkbox" id="type" name="type" value="sweets" />
-									<label for="type">Sweets</label>
-									<input type="checkbox" id="type" name="type" value="snack" />
-									<label for="type">Snack</label>
-									<input type="checkbox" id="type" name="type" value="condiment" />
-									<label for="type">Condiment</label>
-									<input type="checkbox" id="type" name="type" value="sauce" />
-									<label for="type">Sauce</label>
-									<input type="checkbox" id="type" name="type" value="nd-drink" />
-									<label for="type">Non-Dairy Drink</label>
-									<input type="checkbox" id="type" name="type" value="grass-fed" />
-									<label for="type">Grass-fed</label>
-									<input type="checkbox" id="type" name="type" value="free-range" />
-									<label for="type">Free-range</label>
-									<input type="checkbox" id="type" name="type" value="gluten-free" />
-									<label for="type">Gluten-free</label>
-									<input type="checkbox" id="type" name="type" value="all-natural" />
-									<label for="type">All Natural</label>
-									<input type="checkbox" id="type" name="type" value="pre-made" />
-									<label for="type">Pre-Made Meal</label>
+									<option defaultValue="vegetable">Vegetable</option>
+									<option defaultValue="fruit">Fruit</option>
+									<option defaultValue="fish/seafood">Fish/Seafood</option>
+									<option defaultValue="protein">Protein</option>
+									<option defaultValue="dairy">Dairy</option>
+									<option defaultValue="fats">Fats</option>
+									<option defaultValue="Sweets">Sweets</option>
+									<option defaultValue="snack">Snack</option>
+									<option defaultValue="condiment">Condiment</option>
+									<option defaultValue="sauce">Sauce</option>
+									<option defaultValue="non-dairy drink">Non-Dairy Drink</option>
+									<option defaultValue="grass-fed">Grass-fed</option>
+									<option defaultValue="free-rang">Free-range</option>
+									<option defaultValue="gluten-free">Gluten-free</option>
+									<option defaultValue="all natural">All Natural</option>
+									<option defaultValue="pre-made meal">Pre-Made Meal</option>
 								</select>
 							</div>
 							<div id="divGrocLeft">
-								<label for="quantity">Quantity:</label>
-								<input type="number" max="1825" min="0.05" step="0.05" value="1" />
-								<label for="measurement">Measurement:</label>
+								<label>Quantity:</label>
+								<input type="number" max="1825" min="0.05" step="0.05" defaultValue="1" id="amount" />
+								<label>Measurement:</label>
 								<select id="store">
-									<option value="choose" disabled selected>Choose</option>
-									<option value="tablespoon">Tablespoon</option>
-									<option value="teaspoon">Teaspoon</option>
-									<option value="cup">Cup</option>
-									<option value="pint">Pint</option>
-									<option value="quart">Quart</option>
-									<option value="gallon">Gallon</option>
-									<option value="ounce">Ounce</option>
-									<option value="pound">Pound</option>
-									<option value="pint">Pint</option>
-									<option value="dash">Dash/Pinch</option>
-									<option value="pint">Pint</option>
+									<option defaultValue="choose" disabled selected>Choose</option>
+									<option defaultValue="tablespoon">Tablespoon</option>
+									<option defaultValue="teaspoon">Teaspoon</option>
+									<option defaultValue="cup">Cup</option>
+									<option defaultValue="pint">Pint</option>
+									<option defaultValue="quart">Quart</option>
+									<option defaultValue="gallon">Gallon</option>
+									<option defaultValue="ounce">Ounce</option>
+									<option defaultValue="pound">Pound</option>
+									<option defaultValue="pint">Pint</option>
+									<option defaultValue="dash">Dash/Pinch</option>
+									<option defaultValue="pint">Pint</option>
 								</select>
-								<label for="store">Store:</label>
+								<label>Store:</label>
 								<select id="store">
-									<option value="choose" disabled selected>Choose</option>
-									<option value="albertsons">Albertsons LLC</option>
-									<option value="aholddelhaize">Ahold Delhaize</option>
-									<option value="kroger">Kroger</option>
-									<option value="target">Target</option>
-									<option value="walmart">Walmart</option>
-									<option value="other">Other</option>
+									<option defaultValue="choose" disabled selected>Choose</option>
+									<option defaultValue="albertsons">Albertsons LLC</option>
+									<option defaultValue="aholddelhaize">Ahold Delhaize</option>
+									<option defaultValue="kroger">Kroger</option>
+									<option defaultValue="target">Target</option>
+									<option defaultValue="walmart">Walmart</option>
+									<option defaultValue="other">Other</option>
 								</select>
-								<label for="expiration">Expiration (Days):</label>
-								<input type="number" max="1825" min="1" step="1" value="7" />
-								<label for="item-pic">Item Picture:</label>
+								<label>Expiration (Days):</label>
+								<input type="number" max="1825" min="1" step="1" defaultValue="7" />
+								<label>Item Picture:</label>
 								<input type="file" accept="image/*" />
 							</div>
 						</form>
-						<button type="button">Submit</button>
+						<button onClick={this.submitClick} type="button">Submit</button>
 					</div>
 				</div>
 				</React.Fragment>
